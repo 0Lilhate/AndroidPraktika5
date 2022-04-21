@@ -6,6 +6,7 @@ public class Product implements Comparable<Product>{
     private Integer price;
     private String image;
     private Integer sale;
+    public static boolean key = true;
 
     public Product(Integer id, String name, Integer price, String image){
         this.id = id;
@@ -13,6 +14,7 @@ public class Product implements Comparable<Product>{
         this.price = price;
         this.image = image;
     }
+
 
     public Integer getSale() {
         return sale;
@@ -56,8 +58,15 @@ public class Product implements Comparable<Product>{
 
     @Override
     public int compareTo(Product product) {
-        if(this.price < product.price) return 1;
-        else if(this.price == product.price) return 0;
-        else return -1;
+        if(key){
+            if(this.price < product.price) return 1;
+            else if(this.price == product.price) return 0;
+            else return -1;
+        }
+        else {
+            if(this.price < product.price) return -1;
+            else if(this.price == product.price) return 0;
+            else return 1;
+        }
     }
 }

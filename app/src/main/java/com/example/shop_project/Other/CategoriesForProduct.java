@@ -20,6 +20,7 @@ import com.example.shop_project.Adapter.ProductAdapter;
 import com.example.shop_project.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CategoriesForProduct extends Fragment {
     private View view;
@@ -59,10 +60,21 @@ public class CategoriesForProduct extends Fragment {
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b)
-                    Toast.makeText(getContext(), "!!", Toast.LENGTH_SHORT).show();
+                if(b) {
+                    Product.key = true;
+                    Toast.makeText(getContext(), "true", Toast.LENGTH_SHORT).show();
+                    Collections.sort(products);
+                    ProductAdapter productAdapter = new ProductAdapter(getContext(), products);
+                    recyclerView.setAdapter(productAdapter);
+
+
+                }
                 else {
-                    Toast.makeText(getContext(), "?", Toast.LENGTH_SHORT).show();
+                    Product.key = false;
+                    Toast.makeText(getContext(), "false", Toast.LENGTH_SHORT).show();
+                    Collections.sort(products);
+                    ProductAdapter productAdapter = new ProductAdapter(getContext(), products);
+                    recyclerView.setAdapter(productAdapter);
                 }
             }
         });
