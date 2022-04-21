@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:backgroundTint="#0001FC"
+    android:background="@drawable/my_style_layout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:layout_alignParentLeft = "true"
+            android:layout_marginTop="36sp"
+            android:layout_marginBottom="4sp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="24sp"/>
+
+        <TextView
+            android:id="@+id/price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_text_view"
+            android:layout_marginStart="24sp"
+            android:layout_marginBottom="35sp"
+
+            android:text="1312"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="40dp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

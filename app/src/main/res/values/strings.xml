@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">shop_project</string>
+    <string name="home">Главная</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="categoriesActivity">CategoriesActivity</string>
+    <string name="title_home">Home</string>
+    <string name="search">Search</string>
+    <string name="shop">Корзина</string>
+    <string name="sale">-50%</string>
+    <string name="person">Профиль</string>
+    <string name="categories">Категории</string>
+</resources>
