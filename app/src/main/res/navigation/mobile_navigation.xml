@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.example.shop_project.ui.dashboard.DashboardFragment"
+        android:name="com.example.shop_project.ui.Person.PersonFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search" />
 

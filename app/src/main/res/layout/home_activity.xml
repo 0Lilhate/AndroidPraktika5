@@ -66,7 +66,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_categories"
                 android:layout_centerHorizontal="true"
-                android:text="1132" />
+
+                style="@style/MyTextStyleForHomeFragment"
+                android:text="@string/categories" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -90,7 +92,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_favorites"
                 android:layout_centerHorizontal="true"
-                android:text="1132" />
+
+                style="@style/MyTextStyleForHomeFragment"
+                android:text="@string/Favorites" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -114,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_gifts"
                 android:layout_centerHorizontal="true"
-                android:text="1132" />
+
+                style="@style/MyTextStyleForHomeFragment"
+                android:text="@string/Gifts" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -138,7 +144,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_popular"
                 android:layout_centerHorizontal="true"
-                android:text="1132" />
+
+                style="@style/MyTextStyleForHomeFragment"
+                android:text="@string/Popular" />
         </RelativeLayout>
     </GridLayout>
 
@@ -167,23 +175,17 @@
             android:layout_height="0dp"
 
             android:scrollbars="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:fitsSystemWindows="true"
+            android:layout_marginBottom="46dp"
             tools:listitem="@layout/sale_item" />
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
 
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
+
+
 
 
     </android.support.constraint.ConstraintLayout>

@@ -19,9 +19,12 @@
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/categories_layout.xml" value="0.264" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_dashboard.xml" value="0.2006340579710145" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_home.xml" value="0.2006340579710145" />
-        <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_person.xml" value="0.2341485507246377" />
+        <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_person.xml" value="0.264" />
+        <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/fragment_shop.xml" value="0.25416666666666665" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/home_activity.xml" value="0.264" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/product_item.xml" value="0.264" />
+        <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/profile_list_item.xml" value="0.25416666666666665" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/layout/sale_item.xml" value="0.264" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/D/Android/Android-project/project_shop/app/src/main/res/menu/menu_back.xml" value="0.25416666666666665" />

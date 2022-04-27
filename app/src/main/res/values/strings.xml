@@ -9,4 +9,17 @@
     <string name="sale">-50%</string>
     <string name="person">Профиль</string>
     <string name="categories">Категории</string>
+    <string name="Favorites">Избранное</string>
+    <string name="Gifts">Подарки</string>
+    <string name="Popular">Популярное</string>
+    <string name="Profile">Профиль</string>
+    
+    
+    <string-array name="ProfileList">
+        <item>Заказы</item>
+        <item>Возвраты</item>
+        <item>Информация об аккаунте</item>
+        <item>Настройки приватности</item>
+        <item>Помощь</item>
+    </string-array>
 </resources>

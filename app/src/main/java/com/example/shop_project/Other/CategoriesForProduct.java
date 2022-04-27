@@ -1,5 +1,6 @@
 package com.example.shop_project.Other;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,14 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 
+import com.example.shop_project.Item.ItemCategories;
 import com.example.shop_project.Item.Product;
 import com.example.shop_project.Adapter.ProductAdapter;
 import com.example.shop_project.R;
@@ -29,16 +32,32 @@ public class CategoriesForProduct extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Product> products = new ArrayList<>();
     private CheckBox checkBoxFilterPrice;
+    Integer id;
+
+    private ItemCategories itemCategories;
+
+    ProductAdapter productAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onAttach(Activity a) {
+        super.onAttach(a);
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        // Получение id для катогории продуктов
+        Bundle bundle = getArguments();
+        assert bundle != null;
+        id = bundle.getInt("id");
+        //
+
         view = inflater.inflate(R.layout.categories_for_product_fragment, container, false);
         setHasOptionsMenu(true);
 
@@ -53,7 +72,19 @@ public class CategoriesForProduct extends Fragment {
         initProductAdapter();
 
 
+
+
+
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        inflater.inflate(R.menu.menu_back, menu);
+
+        super.onCreateOptionsMenu(menu,inflater);
+
     }
 
     private void onClickCheckBox(CheckBox checkBox){
@@ -61,19 +92,21 @@ public class CategoriesForProduct extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b) {
+
+                    products = productAdapter.getProducts();
                     Product.key = true;
-                    Toast.makeText(getContext(), "true", Toast.LENGTH_SHORT).show();
                     Collections.sort(products);
-                    ProductAdapter productAdapter = new ProductAdapter(getContext(), products);
+                    productAdapter = new ProductAdapter(getContext(), products);
                     recyclerView.setAdapter(productAdapter);
 
 
                 }
                 else {
+
+                    products = productAdapter.getProducts();
                     Product.key = false;
-                    Toast.makeText(getContext(), "false", Toast.LENGTH_SHORT).show();
                     Collections.sort(products);
-                    ProductAdapter productAdapter = new ProductAdapter(getContext(), products);
+                    productAdapter = new ProductAdapter(getContext(), products);
                     recyclerView.setAdapter(productAdapter);
                 }
             }
@@ -88,7 +121,7 @@ public class CategoriesForProduct extends Fragment {
         layoutManager = new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(layoutManager);
 
-        ProductAdapter productAdapter = new ProductAdapter(getContext(), products);
+        productAdapter = new ProductAdapter(getContext(), products);
         recyclerView.setAdapter(productAdapter);
     }
 
@@ -104,6 +137,11 @@ public class CategoriesForProduct extends Fragment {
         products.add(new Product(8,"Iphone 12", 33333,"image.png"));
 
 
+    }
+
+    //Получение данных
+    public void setSelectedData(ItemCategories itemCategories){
+        this.itemCategories = itemCategories;
     }
 
 }

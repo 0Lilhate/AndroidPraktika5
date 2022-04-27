@@ -6,6 +6,7 @@ public class Product implements Comparable<Product>{
     private Integer price;
     private String image;
     private Integer sale;
+    private boolean favorites;
     public static boolean key = true;
 
     public Product(Integer id, String name, Integer price, String image){
@@ -13,8 +14,15 @@ public class Product implements Comparable<Product>{
         this.name = name;
         this.price = price;
         this.image = image;
+        this.favorites = false;
     }
 
+    public void setFavorites(boolean favorites) {
+        this.favorites = favorites;
+    }
+    public boolean getFavorites() {
+        return favorites;
+    }
 
     public Integer getSale() {
         return sale;

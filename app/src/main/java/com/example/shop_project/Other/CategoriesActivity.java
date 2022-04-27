@@ -1,5 +1,6 @@
 package com.example.shop_project.Other;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,6 +32,10 @@ public class CategoriesActivity extends Fragment {
     private RecyclerView recyclerViewCategories;
     private RecyclerView.LayoutManager layoutManager;
     private CategoriesAdapter.RecyclerViewClickListener listener;
+
+
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -91,9 +96,19 @@ public class CategoriesActivity extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getContext(), position +"", Toast.LENGTH_SHORT).show();
-                CategoriesForProduct categories = new CategoriesForProduct();
+
+                
+
+
+                CategoriesForProduct categoriesForProduct = new CategoriesForProduct();
+                //Передача id в CategoriesForProduct
+                Bundle bundle = new Bundle();
+                bundle.putInt("id",categories.get(position).getId());
+                categoriesForProduct.setArguments(bundle);
+                //
+
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.nav_host_fragment_activity_main2, categories);
+                ft.replace(R.id.nav_host_fragment_activity_main2, categoriesForProduct);
 
                 ft.addToBackStack(null);
                 ft.commit();
